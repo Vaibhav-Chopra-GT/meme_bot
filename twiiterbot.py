@@ -1,6 +1,7 @@
 import tweepy
 import time
 import os
+from postimage import downloadmeme
 
 CONSUMER_KEY = os.environ.get('c_key')
 CONSUMER_SECRET = os.environ.get('c_secret')
@@ -36,10 +37,11 @@ def reply():
     )
     for mention in reversed(mentions):
         print(str(mention.id) + "  " + mention.text)
+        downloadmeme()
 
         lstseenid = mention.id
         putid(lstseenid, filename)
-        media = api.media_upload(r"C:\Users\Vaibhav Chopra\Downloads\imagesfennec.jpg")
+        media = api.media_upload("meme.jpg")
 
         post_result = api.update_status(
             "@" + mention.user.screen_name,
