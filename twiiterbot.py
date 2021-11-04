@@ -42,14 +42,19 @@ def reply():
         lstseenid = mention.id
         putid(lstseenid, filename)
         media = api.media_upload("meme.jpg")
-
-        post_result = api.update_status(
+        
+        try:
+            api.update_status(
             "@" + mention.user.screen_name,
             in_reply_to_status_id=mention.id,
             media_ids=[media.media_id],
-        )
+                )
+        except:
+            api.update_status("@" + mention.user.screen_name + "Something wrong happened, pls try again",in_reply_to_status_id=mention.id)
 
-
-while True:
-    reply()
-    time.sleep(15)
+if __name__ == "__main__":
+    while True:
+      
+        reply()
+        time.sleep(15)
+           

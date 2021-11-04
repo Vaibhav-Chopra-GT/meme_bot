@@ -2,7 +2,7 @@ import requests
 
 
 def downloadmeme():
-    r = requests.get("https://meme-api.herokuapp.com/gimme")
+    r = requests.get("https://meme-api.herokuapp.com/gimme/memes")
     # json is used for web dictionary
     link = r.json()["url"]
 
