@@ -1,1 +1,1 @@
-worker: python twiiterbot.py
+start: python twiiterbot.py
