@@ -1,1 +1,1 @@
-start: python twiiterbot.py
+start: python twitter_bot.py
