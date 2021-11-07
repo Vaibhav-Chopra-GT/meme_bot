@@ -1,7 +1,7 @@
 import tweepy
 import time
 import os
-from postimage import downloadmeme
+from download_image import downloadmeme
 
 CONSUMER_KEY = os.environ.get('c_key')
 CONSUMER_SECRET = os.environ.get('c_secret')
