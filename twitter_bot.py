@@ -3,9 +3,9 @@ import time
 import os
 from download_image import downloadmeme
 
-CONSUMER_KEY = os.environ.get('c_key')
-CONSUMER_SECRET = os.environ.get('c_secret')
-ACCESS_KEY = os.environ.get('acc_key')
+CONSUMER_KEY = os.environ.get("c_key")
+CONSUMER_SECRET = os.environ.get("c_secret")
+ACCESS_KEY = os.environ.get("acc_key")
 ACCESS_SECRET = os.environ.get("acc_secret")
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -42,19 +42,24 @@ def reply():
         lstseenid = mention.id
         putid(lstseenid, filename)
         media = api.media_upload("meme.jpg")
-        
+
         try:
             api.update_status(
-            "@" + mention.user.screen_name,
-            in_reply_to_status_id=mention.id,
-            media_ids=[media.media_id],
-                )
+                "@" + mention.user.screen_name,
+                in_reply_to_status_id=mention.id,
+                media_ids=[media.media_id],
+            )
         except:
-            api.update_status("@" + mention.user.screen_name + "Something wrong happened, pls try again",in_reply_to_status_id=mention.id)
+            api.update_status(
+                "@"
+                + mention.user.screen_name
+                + "Something wrong happened, pls try again",
+                in_reply_to_status_id=mention.id,
+            )
+
 
 if __name__ == "__main__":
     while True:
-      
+
         reply()
         time.sleep(15)
-           
