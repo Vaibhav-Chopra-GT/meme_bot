@@ -1,1 +1,1 @@
-start: python twitter_bot.py
+start: python -m meme_bot

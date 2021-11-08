@@ -1,5 +1,5 @@
 import unittest
-import download_image
+from meme_bot import download_image
 import os
 
 

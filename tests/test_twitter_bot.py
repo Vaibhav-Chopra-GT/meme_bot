@@ -1,5 +1,5 @@
 import unittest
-import twitter_bot
+from meme_bot import twitter_bot
 import os
 
 
