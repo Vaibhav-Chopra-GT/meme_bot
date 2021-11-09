@@ -5,14 +5,15 @@ on:
 
   pull_request:
 
-env: 
-   acc_key:${{ secrets.acc_key }}
-   acc_secret:${{ secrets.acc_secret }}
-   c_key:${{ secrets.c_key }}
-   c_secret:${{ secrets.c_secret }}
+
 
 jobs:
   build:
+    env: 
+      acc_key : ${{ secrets.acc_key }}
+      acc_secret : ${{ secrets.acc_secret }}
+      c_key : ${{ secrets.c_key }}
+      c_secret : ${{ secrets.c_secret }}
 
     runs-on: ubuntu-latest
 
