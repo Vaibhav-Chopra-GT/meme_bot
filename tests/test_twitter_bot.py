@@ -14,7 +14,7 @@ class test_twitter_bot(unittest.TestCase):
     def test_putid(self):
 
         twitter_bot.putid(4321, "test2.txt")
-        fread = open("test2.txt","r")
+        fread = open("test2.txt", "r")
         x = int(fread.read().strip())
         self.assertEqual(x, 4321)
         fread.close()

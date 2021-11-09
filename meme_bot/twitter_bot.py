@@ -1,5 +1,4 @@
 import tweepy
-import time
 import os
 from meme_bot.download_image import downloadmeme
 
@@ -49,13 +48,10 @@ def reply():
                 in_reply_to_status_id=mention.id,
                 media_ids=[media.media_id],
             )
-        except:
+        except: # noqa
             api.update_status(
                 "@"
                 + mention.user.screen_name
                 + "Something wrong happened, pls try again",
                 in_reply_to_status_id=mention.id,
             )
-
-
-
