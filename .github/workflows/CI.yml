@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
 name: Meme Bot
 
 on:
@@ -9,8 +6,14 @@ on:
   pull_request:
 
 
+
 jobs:
   build:
+    env: 
+      acc_key : ${{ secrets.acc_key }}
+      acc_secret : ${{ secrets.acc_secret }}
+      c_key : ${{ secrets.c_key }}
+      c_secret : ${{ secrets.c_secret }}
 
     runs-on: ubuntu-latest
 
